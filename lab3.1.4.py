@@ -18,5 +18,4 @@ class Point(object):
         self.y = self.y + dy
 
     def dist(self, other):
-        return math.sqrt((other.x - self.x) ** 2 + (other.y - self.y) ** 2)
-    
+        return math.sqrt((other[0] - self.x) ** 2 + (other[1] - self.y) ** 2)
