@@ -183,7 +183,7 @@ def drawRhombus(screen, color, mouse_pos):
 
 # Drawing taskbar  
 def taskBar():
-    menu = pygame.image.load("menu.png")
+    menu = pygame.image.load("paint/menu.png")
     screen.blit(menu, (0, 0))
     
     black_rect = (10, 5, 20, 20)
@@ -197,35 +197,35 @@ def taskBar():
     red_rect = (90, 5, 20, 20)
     pygame.draw.rect(screen, red, red_rect)
 
-    lineImage = pygame.image.load("drawline.png")
+    lineImage = pygame.image.load("paint/drawline.png")
     lineImage = pygame.transform.scale(lineImage, (20, 20))
     screen.blit(lineImage, (150, 5))
 
-    rectImage = pygame.image.load("rect.png")
+    rectImage = pygame.image.load("paint/rect.png")
     rectImage = pygame.transform.scale(rectImage, (30, 30))
     screen.blit(rectImage, (170, 0))
 
-    squareImage = pygame.image.load("square.png")
+    squareImage = pygame.image.load("paint/square.png")
     squareImage = pygame.transform.scale(squareImage, (30, 30))
     screen.blit(squareImage, (200, 0))
 
-    circleImage = pygame.image.load("circle.png")
+    circleImage = pygame.image.load("paint/circle.png")
     circleImage = pygame.transform.scale(circleImage, (25, 25))
     screen.blit(circleImage, (230, 3))
 
-    etrienImage = pygame.image.load("etrien.png")
+    etrienImage = pygame.image.load("paint/etrien.png")
     etrienImage = pygame.transform.scale(etrienImage, (30, 30))
     screen.blit(etrienImage, (255, 0))
 
-    trienImage = pygame.image.load("trien.png")
+    trienImage = pygame.image.load("paint/trien.png")
     trienImage = pygame.transform.scale(trienImage, (30, 30))
     screen.blit(trienImage, (285, 0))
 
-    rhombusImage = pygame.image.load("rhombus.png")
+    rhombusImage = pygame.image.load("paint/rhombus.png")
     rhombusImage = pygame.transform.scale(rhombusImage, (30, 30))
     screen.blit(rhombusImage, (315, 0))
 
-    eraserImage = pygame.image.load("eraser.png")
+    eraserImage = pygame.image.load("paint/eraser.png")
     eraserImage = pygame.transform.scale(eraserImage, (30, 30))
     screen.blit(eraserImage, (600, 0))
 main()

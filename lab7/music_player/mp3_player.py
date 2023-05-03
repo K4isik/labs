@@ -11,7 +11,7 @@ from tkinter import Button
 from tkinter import filedialog
 from os import listdir
 from os.path import isfile, join
-import random
+import pygame
 current_song=0
 mypath=""
 current_volume = float(0.5)
@@ -54,27 +54,28 @@ def current_picture():
 
 def previous_song():
     global mysongs,current_song,onlyfiles
-    if current_song !=0:
-        current_song-=1
-    else:
-        current_song=len(mysongs)-1
-        
-    try:
-        mixer.init()
-        # mixer.music.load(current_song)
-        print(mysongs)
-        print(current_song)
-        mixer.music.load(mysongs[current_song])
-        mixer.music.set_volume(current_volume)
-        mixer.music.play()
-        song_title = onlyfiles[current_song]
-        song_title_label.config(text='Now playing:' + str(song_title))
-        # volume_label.config(text='Volume :' + str(current_volume))
-        current_picture()
-    except Exception as e:
-        print(e)
-        song_title_label.config(fg='red', text = 'Error playing music')
-        btn.place(x=400, y=300, anchor=CENTER)
+    if current_song.key == pygame.K_DOWN or current_song.key == pygame.K_LEFT:
+        if current_song !=0:
+            current_song-=1
+        else:
+            current_song=len(mysongs)-1
+            
+        try:
+            mixer.init()
+            # mixer.music.load(current_song)
+            print(mysongs)
+            print(current_song)
+            mixer.music.load(mysongs[current_song])
+            mixer.music.set_volume(current_volume)
+            mixer.music.play()
+            song_title = onlyfiles[current_song]
+            song_title_label.config(text='Now playing:' + str(song_title))
+            # volume_label.config(text='Volume :' + str(current_volume))
+            current_picture()
+        except Exception as e:
+            print(e)
+            song_title_label.config(fg='red', text = 'Error playing music')
+            btn.place(x=400, y=300, anchor=CENTER)
 
 
 def next_song():
